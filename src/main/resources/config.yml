@@ -1,0 +1,58 @@
+# 奖励模式选择: player 或 global
+reward-mode: "player"
+
+# 玩家游玩模式设置
+player-reward:
+  interval-minutes: 30
+  show-progress: true
+  notification-minutes: [15, 10, 5, 1]
+  check-interval-seconds: 30
+
+# 全局模式设置
+global-reward:
+  interval-minutes: 20
+  min-players: 1
+
+# 是否从全游戏物品中随机（false 则使用下方 rewards 列表）
+use-all-materials: false
+
+# 全物品模式配置（仅当 use-all-materials 为 true 时生效）
+all-materials:
+  min-amount: 1
+  max-amount: 64
+  excluded-materials:
+    - "AIR"
+    - "VOID_AIR"
+    - "CAVE_AIR"
+    - "COMMAND_BLOCK"
+    - "BARRIER"
+    - "LIGHT"
+
+# 奖励物品配置（material、amount、weight）
+rewards:
+  - material: "DIAMOND"
+    amount: 1
+    weight: 10
+  - material: "EMERALD"
+    amount: 5
+    weight: 15
+  - material: "GOLD_INGOT"
+    amount: 2
+    weight: 20
+
+# 消息设置
+messages:
+  prefix: "§6[奖励系统]§r "
+  player-reward: "§a你获得了奖励! §f获得了 {amount}x {material}"
+  global-reward: "§6[系统] §a全服玩家获得了奖励!"
+
+# 功能开关
+features:
+  enabled: true
+  play-sound: true
+  reward-sound: "ENTITY_PLAYER_LEVELUP"
+
+# 日志设置
+logging:
+  log-rewards: true
+  level: "INFO"

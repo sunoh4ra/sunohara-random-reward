@@ -1,0 +1,33 @@
+name: SunoharaRandomReward
+version: ${project.version}
+description: ${project.description}
+author: Sunohara Team
+main: com.sunohara.reward.RandomRewardPlugin
+api-version: '1.21'
+
+commands:
+  reward:
+    description: 随机奖励系统命令
+    usage: /reward <subcommand>
+    permission: sunohara.reward.admin
+    aliases: [rwd]
+  rhelp:
+    description: 查看奖励系统帮助
+    usage: /rhelp
+    permission: sunohara.reward.help
+
+permissions:
+  sunohara.reward.*:
+    description: 所有随机奖励权限
+    children:
+      sunohara.reward.admin: true
+      sunohara.reward.help: true
+    default: op
+
+  sunohara.reward.admin:
+    description: 奖励系统管理员权限
+    default: op
+
+  sunohara.reward.help:
+    description: 查看帮助信息
+    default: true
